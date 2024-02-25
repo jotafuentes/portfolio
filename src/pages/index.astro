@@ -1,11 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
+import Badge from '../components/Badge.astro'
+import Linkedin from '../components/icons/Linkedin.astro'
+import SocialPill from '../components/SocialPill.astro'
+import GitHubIcon from '../components/icons/GitHubIcon.astro'
+import MailIcon from '../components/icons/MailIcon.astro'
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout 
+title="Portfolio de jotafuentes - FrontEnd Engineer" description="Desarrollador frontend y programador web">
+
 	<main>
-		<h1>Portfolio</h1>
+		<section class="w-full lg:w-[740px] mx-auto py-44">
+			<img class="rounded-full size-12"  src="https://avatars.githubusercontent.com/u/98759105?v=4" alt="jotafuentes foto">
+			<h1 class="text-white text-4xl font-bold flex flex-row justify-start gap-4 pb-6">Hey, I'm Jose L Fuentes <a href="https://www.linkedin.com/in/joseluisfuentes/" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge>Open To Work</Badge></></h1>
+			<h2 class="text-xl opacity-80 text-wrap"> My name is Jose L Fuentes I'm a <span class="text-yellow-400 font-bold">Front-End Engineer</span> <span class="text-red-400">based in Valencia 🥘</span>. <span class="opacity-80">I describe myself as a passionate developer who loves coding ❤️. In my free time you can find me lifting weigths in Crossfit 🏋️‍♂️ or at the mountains ⛰️</span></h2>
+			<nav class="flex gap-x-4 mt-5">
+				<SocialPill href="https://linkedin.com/in/joseluisfuentes">
+					<Linkedin class="size-6"/>
+					LinkedIn
+				</SocialPill>
+				<SocialPill href="https://github.com/jotafuentes">
+					<GitHubIcon class='size-6'/>
+					GitHub
+				</SocialPill>
+				<SocialPill href="mailto: joseluisfuentes17@gmail.com">
+					<MailIcon class='size-6'/>
+					joseluisfuentes17@gmail.com
+				</SocialPill>
+			</nav>
+		</section>
 	</main>
+	
 </Layout>
 
