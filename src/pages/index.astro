@@ -2,21 +2,26 @@
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro'
-import Linkedin from '../components/icons/Linkedin.astro'
 import SocialPill from '../components/SocialPill.astro'
+import Container from '../components/Container.astro'
+import Projects from '../components/Projects.astro'
+import Footer from '../components/Footer.astro'
+
 import GitHubIcon from '../components/icons/GitHubIcon.astro'
+import Linkedin from '../components/icons/Linkedin.astro'
 import MailIcon from '../components/icons/MailIcon.astro'
+import CodeIcon from '../components/icons/CodeIcon.astro'
 ---
 
 <Layout 
 title="Portfolio de jotafuentes - FrontEnd Engineer" description="Desarrollador frontend y programador web">
 
-	<main>
-		<section class="w-full lg:w-[740px] mx-auto py-44">
-			<img class="rounded-full size-12"  src="https://avatars.githubusercontent.com/u/98759105?v=4" alt="jotafuentes foto">
-			<h1 class="text-white text-4xl font-bold flex flex-row justify-start gap-4 pb-6">Hey, I'm Jose L Fuentes <a href="https://www.linkedin.com/in/joseluisfuentes/" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge>Open To Work</Badge></></h1>
-			<h2 class="text-xl opacity-80 text-wrap"> My name is Jose L Fuentes I'm a <span class="text-yellow-400 font-bold">Front-End Engineer</span> <span class="text-red-400">based in Valencia 🥘</span>. <span class="opacity-80">I describe myself as a passionate developer who loves coding ❤️. In my free time you can find me lifting weigths in Crossfit 🏋️‍♂️ or at the mountains ⛰️</span></h2>
-			<nav class="flex gap-x-4 mt-5">
+	<main class="px-4">
+		<Container>
+			<img class="rounded-full size-12 mb-4"  src="https://avatars.githubusercontent.com/u/98759105?v=4" alt="jotafuentes foto">
+			<h1 class="text-white text-2xl lg:text-4xl font-bold flex flex-row justify-start gap-4 pb-6">Hey, I'm Jose L Fuentes <a href="https://www.linkedin.com/in/joseluisfuentes/" target="_blank" rel="noopener" class="flex justify-center items-center"><Badge>Open To Work</Badge></a></h1>
+			<h2 class="text-xl opacity-80 text-wrap"> My name is Jose L Fuentes I'm a <span class="text-yellow-200 font-bold">Front-End Engineer</span> <span class="text-red-400">based in Valencia 🥘</span>. <span class="opacity-80">I describe myself as a passionate developer who loves coding ❤️. In my free time you can find me lifting weigths in Crossfit 🏋️‍♂️ or at the mountains ⛰️</span></h2>
+			<nav class="flex flex-wrap  gap-4 mt-8">
 				<SocialPill href="https://linkedin.com/in/joseluisfuentes">
 					<Linkedin class="size-6"/>
 					LinkedIn
@@ -30,8 +35,16 @@ title="Portfolio de jotafuentes - FrontEnd Engineer" description="Desarrollador 
 					joseluisfuentes17@gmail.com
 				</SocialPill>
 			</nav>
-		</section>
+		</Container>
+		<Container id="projects">
+			<h2 class="flex text-3xl items-center font-semibold mb-6 gap-x-4 "><CodeIcon class="size-8 text-yellow-200"/>Projects</h2>
+			<Projects/>
+		</Container>
+		
 	</main>
+	<footer>
+		<Footer/>
+	</footer>
 	
 </Layout>
 

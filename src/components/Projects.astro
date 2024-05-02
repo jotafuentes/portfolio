@@ -1,0 +1,52 @@
+---
+import ReactIcon from '../components/icons/ReactIcon.astro'
+import TailwindIcon from '../components/icons/TailwindIcon.astro'
+
+const TAGS = {
+    REACT: {
+        name: 'React',
+        class: ' bg-white/5 text-white',
+        icon: ReactIcon
+    },
+    TAILWIND: {
+        name: 'Tailwind CSS',
+        class: ' bg-white/5 text-white',
+        icon: TailwindIcon
+    }
+}
+
+const PROJECTS = [
+    {
+        title: 'The Weather App',
+        description: 'The Weather App is a React-based application that leverages Open Weather and GeoDB Cities APIs to provide precise weather forecasts and data for any city worldwide. The app also employs Tailwind CSS for UI design and styling and Chart.js for creating forecast charts, offering a modern and responsive user experience.',
+        link: 'https://weather-app-rho-two-66.vercel.app/',
+        github: 'https://github.com/jotafuentes/weatherApp',
+        image: '/public/theWeatherAppMock.webp',
+        tags: [TAGS.REACT, TAGS.TAILWIND]
+    }
+]
+
+
+---
+
+{
+    PROJECTS.map(({title, description, tags, image })=> (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-4">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex flex-row mb-2 gap-x-2">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-3 items-center `}>
+                            <tag.icon class="size-7"/>
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img 
+            class="rounded shadow-2xl shadow-white/10"
+            src={image} alt={`Captura de pantalla del proyecto ${title}`}/>
+        </article>
+    ))
+}
